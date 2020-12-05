@@ -1,0 +1,533 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box; /* dodavanje pedding-a na element neće povećati njegov height (veličinu)*/
+}
+
+html {
+	scroll-behavior: smooth; /*propisuje da li glatko animirati položaj za pomicanje, umjesto ravnoj skoka, kada korisnik klikne na link unutar pomicati kutije*/
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.holder {
+	
+}
+
+.header {
+	width: 100vw;
+}
+
+.page {
+	
+}
+
+/* VELIČINA STRANICA */
+.column {
+	width: 100vw;      
+	margin: 0px auto; /* 0 pixela gore dolje i auto lijevo i desno - automatski rasporedimo prostor lijevo i desno*/
+}
+
+.page .column {
+	height: 100vh; 
+}
+
+.container {
+	width: 1440px;
+    margin: 0px auto;
+}
+
+.margin-left-auto {
+	margin-left: auto;  /*margina maksimalno sa lijeve strane kako bi se element pomaknuo skroz desno */
+}
+
+/* BANER */
+#banner-row .container {
+	display: flex;             /* odjednom unutar njega postaju svi flex-item elementi*/
+	height: 150px;
+    align-items: center;        /*određuje vertikalno poravnanje za stavke unutar fleksibilnog kontejnera*/
+    width: auto;
+    background-image: url(pozadine/gback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#banner-row .container > h1 {
+    margin-left: 35%;
+    font-size:50px;
+    color: #ffd42a;
+}
+
+#banner-row .drmreze {
+	display: flex;
+	align-items: center;     
+}
+
+#banner-row .drmreze:last-child {
+	margin-right: 80px;
+}
+
+#banner-row .drmreze img {
+	height: 50px;
+	width: 50px;
+	margin-right: 40px;
+}
+/* TOP MENU */
+#top-menu {
+	background-color: #87aade;
+	border-bottom: 1px solid #000000;
+}
+
+#top-menu .container {
+	display: flex;               /* odjednom unutar njega postaju svi flex-item elementi*/
+	height: 60px;
+	align-items: center;          /*određuje vertikalno poravnanje za stavke unutar fleksibilnog kontejnera*/
+}
+
+#top-menu .menu {
+	padding: 10px 30px;
+	flex-grow: 1;                /*da svaki zauzima jedno mjesto*/
+	/* flex-basis: 0;               kako bi  svi bili ravnopravno raspoređeni jedino što onda se ne može rasporediti ako je duži text */
+	border-right: 1px solid #ffffff;
+	transition: 500ms;
+}
+#top-menu a {
+	text-decoration: none;
+	color: #ffffff;
+	flex-grow: 1;                     /*da svaki zauzima jedno mjesto*/
+	font-size: 22px;
+	padding: 10px 30px;
+	text-align: center;
+	
+}
+
+#top-menu .menu:last-child {
+	border-right: none;        /* zadnji elememt nema rub*/
+}
+
+#top-menu .container .menu:hover {
+	background: #ffd42a;
+	color: black;
+	transition: 300ms;
+}
+
+#top-menu .container .menu > a:hover {
+	color: black;
+	transition: 300ms;
+}
+
+.podmeni a {
+	display: block;         /* koristimo ga za prikaz elementa*/
+	
+}
+
+.podmeni {
+	display: none;               /*koji je prema zadanim postavkama skriven*/
+	position: absolute;          /*specificira tip postupka se koristi za pozicioniranje elementa tako da prekrije sve elemente ispod*/
+	border: 1px solid white;
+	border-top: none;
+	margin: 10px;
+	left: 678px; 		/*POZICIJA PADAJUĆEG MENIJA, NISAM MOGAO NAĆI DRUGO RIJEŠENJE */
+}
+
+.menu:hover .podmeni {
+	display: block;
+	background: #87aade;
+	min-width: 307px;
+}
+
+#top-menu .container .menu .podmeni > a:hover {
+	background: #ffd42a;
+	color: black;
+}
+
+#info-red {
+	background-color: #ffd42a;
+}
+
+#info-red .container {
+	display: flex;
+	height: 140px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#info-red .container > div > a {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#main {
+    background-image: url(pozadine/pozadina.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#main .container {
+	display: flex;
+}
+
+#sidebar {
+	width: 340px;
+}
+
+#sadrzaj {
+	flex-grow: 1;
+    flex-basis: 0;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #999999;
+	color: #ffd42a;
+}
+
+.grupa-filtera {
+	margin: 10px 0px;
+}
+
+.grupa-filtera .subtitle {
+	font-size: 30px;
+	color: #ffd42a;
+	margin-bottom: 5px;
+}
+
+.filter > a {
+	margin: 3px 0px 3px 15px;
+	font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+/* .filter > a:checked { */
+	/* color: black; */
+/* } */
+
+#sadrzaj {
+	padding: 60px;
+}
+
+.sadrzaj {
+	border: 1px solid #eeeeee;
+	background: #44444488;
+	font-size: 40px;
+	text-align: center;
+	padding: 30px;
+	color: #ffd42a;
+	box-shadow: 0px 0px 10px 2px #00000088; /*sijena unutar elementa*/
+}
+/* SLIKE SA IZVOĐAČIMA */
+#slike {
+	display: flex;
+	flex-wrap: wrap;              /*određuje da li su fleksibilne opcije treba završiti ili ne*/
+	justify-content: space-between; /*razmak između elemenata*/
+	align-items: stretch;          /*razvučena slika prijeko cijelog elementa*/
+	padding: 0px 30px;
+}
+
+.slika img {
+	width: 100%;
+	height: 100%;
+}
+
+.slika .ime {
+	font-size: 28px;
+	color: black;
+	margin: 3px 0px;
+}
+
+.slika .detalji {
+	font-size: 18px;
+	color: red;
+}
+.slika a {
+	text-decoration: none;
+}
+
+.slika {
+    position: relative;  /*element koji se može pomicati*/
+    display: block;
+	width: 200px;
+    height: 250px;
+	margin: 5px;
+	padding: 5px;
+    border: 3px solid red;
+    border-radius: 15px;
+    overflow: hidden; 				/*sve što prelazi van okvira nije vidljivo */
+    display: inline-block;          /*elementi poredani horizontalno jedan pored drugoga*/
+	text-decoration: none;
+}
+/* TRANZICIJE KARTICA SA SLIKAMA */
+.card-img {
+    position: absolute;         /*apsolutno pozicioniranje prelazi preko drugih elemenata*/
+    top: 0px; 
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s;           /*Ova svojstva prijelaza omogućuju elementima da mijenjaju vrijednosti tijekom određenog trajanja, animirajući promjene svojstava, umjesto da se one odmah dogode. */     
+}
+/* prikazuje se kada prijeđemo mišem */
+.card-text {
+    position: absolute;         /*tada je njegova pozicija apsolutna*/
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 30% 0;
+    background-color: white;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    opacity: 0.0;              /*postavlja razinu neprozirnost za element*/
+    transform: scale3D(0.2, 0.2, 1.0) rotateX(0deg); /*rotacija u osi x ili vertikalno za 360 stupnjeva od 0.2 posto */
+    transition: 5s;
+    
+}
+
+.slika:hover .card-text {
+    top: 0px;           /*tranasformira se do kraja*/
+    opacity: 0.8;       /*prozirnost druge strane kartice*/
+    transition: 1s;
+    transform: scale3D(1.0, 1.0, 1.0) rotateX(360deg); /*rotacija u osi x ili vertikalno za 360 stupnjeva do popunjavanja cijele slike*/
+}
+
+.slika:hover .card-img {
+    transform: scale3D(1.2, 1.2, 1.0); /*povaćanje slike za 1.2 i vraćanj u normalnu veličinu 1.0*/
+    transition: 1s;
+}
+
+#galerija {
+	background-image: url(pozadine/svjetla.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#galerija h1 {
+	text-align: center;
+	color: black;
+	font-size: 50px;
+	padding: 25px;
+}
+
+.galerija-grid {
+	margin: 60px;
+	display: grid;        
+	grid-template: "a b e"   
+	               "d b e"
+	               "f f g"
+	               "h i g";
+}
+
+.galerija {
+	border: 3px solid #dc0000;
+	border-radius: 1%;
+	text-align: center;
+	position: relative;
+	padding: 75px;
+	margin: 10px;
+}
+
+.galerija img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.slgalerija-a { grid-area: a; }
+.slgalerija-b { grid-area: b; }
+.slgalerija-d { grid-area: d; }
+.slgalerija-e { grid-area: e; }
+.slgalerija-f { grid-area: f; }
+.slgalerija-g { grid-area: g; }
+.slgalerija-h { grid-area: h; }
+.slgalerija-i { grid-area: i; }
+
+#rock {
+	background-image: url(pozadine/gback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.naslovzarock {
+	text-align: center;
+	color: #ffd42a;
+	font-weight: bold;
+	font-size: 50px;
+	padding: 60px;
+}
+
+#elektronicka {
+	background-image: url(pozadine/bolja.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#ostalo {
+	background-image: url(pozadine/party.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* LOG-IN */
+#log-in{
+	padding-top: 200px;
+	background-image: url(pozadine/prijava.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;                       
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.clearfix::after {    /*sadržaj poslije - u ovom slučaju ""*/
+  content: "";         /* to je taj sadržaj*/
+  clear: both;         /*da sadržaj ne pluta tj. da se razdvoji*/
+  display: table;
+}
+
+#kontakt {
+	background-image: url(pozadine/kontakt.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contact-page-layout {
+	padding: 150px 300px;
+	display: grid;
+	grid-template: "adrese  mapa"
+	               "mejlovi mapa";
+	grid-template-columns: 400px 1fr; 
+}
+
+.contact-page-layout .addresses {
+	grid-area: adrese;
+	margin-bottom: 20px;
+	font-size: 30px;
+	color: #ffd42a;
+}
+
+.contact-page-electronic .electronic {
+	grid-area: mejlovi;
+}
+
+.contact-page-layout .map {
+	grid-area: mapa;
+	margin-left: 30px;
+	border: 3px solid #ffd42a;
+}
+
+.electronic {
+	font-size: 30px;
+	color: #ffd42a;
+}
+
+.footer {
+	border-top: 3px solid #ffd42a;
+	padding: 20px 10px 40px 10px;
+	background-image: url(pozadine/footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.footer-blocks {
+	width: 1000px;
+	margin: 0px auto;
+	display: flex;               
+}
+
+.footer .block {
+	flex-grow: 1;                
+	text-align: center;
+	color: #ffd42a;
+}
+
+.footer .block:first-child {
+	text-align: left;
+}
+
+.footer .block:last-child {
+	text-align: right;
+}
+
+.footer-menu ul {
+	list-style: none; 
+}
+
+.footer-menu ul li a {
+	text-decoration: none;
+	color: #ffd42a;
+}
+
+.footer-menu ul li a:hover {
+	text-decoration: underline;  
+}
